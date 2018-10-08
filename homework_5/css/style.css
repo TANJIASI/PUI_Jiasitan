@@ -365,3 +365,38 @@ a {
     left: 0;
     bottom: 0;
     right: 0; }
+
+
+.btn.btn-outline-white {
+    border-color: rgba(255, 255, 255, 0.8);
+    background: none;
+    border-radius: 0px;
+    border-width: 2px; }
+.btn.btn-outline-grey {
+    border-color: rgba(200, 200, 200, 0.8);
+    background: none;
+    border-radius: 0px;
+    border-width: 2px; }
+.btn.btn-outline-black {
+    border-color: rgba(10,10, 10, 0.8);
+    background: none;
+    border-radius: 0px;
+    border-width: 2px; }
+
+.btn.btn-outline-grey:hover, .btn.btn-outline-white:focus, .btn.btn-outline-white:active {
+    background: #fff;
+    border-color: #fff;
+    color: #000; }
+.btn.btn-outline-black:hover, .btn.btn-outline-white:focus, .btn.btn-outline-white:active {
+    background: #fff;
+    border-color: #fff;
+    color: #000; }
+.btn.btn-outline-white:hover, .btn.btn-outline-white:focus, .btn.btn-outline-white:active {
+    background: #fff;
+    border-color: #fff;
+    color: #000; }
+
+.vh-100 {
+    height: 100vh; }
+.section {
+    padding: 7em 0; }
