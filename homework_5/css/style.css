@@ -332,3 +332,36 @@ a {
     font-size: 28px; }
 .navbar-brand span {
     font-size: 28px; }
+
+
+
+.cover {
+    background-size: cover;
+    background-repeat: no-repeat; }
+.cover {
+    background-size: cover;
+    background-position: center center; }
+.cover .heading {
+    font-size: 50px;
+    line-height: 1.2;
+    color: #fff; }
+.cover .subheading {
+    line-height: 1.5; }
+.cover .subheading, .cover p {
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 300;
+    font-family: "Rubik", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; }
+.cover a {
+    position: relative;
+    color: #fff; }
+.cover.overlay {
+    position: relative; }
+.cover.overlay:before {
+    content: "";
+    background: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0; }
