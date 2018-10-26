@@ -125,3 +125,12 @@ function saveCart(){
 function loadCart(){
     cart = JSON.parse(localStorage.getItem("shoppingCart"));
 }
+function removeItemFromCartAll(name){
+    for (var i in cart){
+        if (cart[i].name === name){
+            cart.splice(i,1);
+            break;
+        }
+    }
+    saveCart();
+}
