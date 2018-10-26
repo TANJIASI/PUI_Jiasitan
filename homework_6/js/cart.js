@@ -134,3 +134,47 @@ function removeItemFromCartAll(name){
     }
     saveCart();
 }
+function clearCart(){
+    cart = [];
+    saveCart();
+}
+function countCart(){
+    var totalCount = 0;
+    for (var i in cart) {
+        totalCount += cart[i].count;
+    }
+    return totalCount;
+}
+function totalItemCost(){
+    var totalCost = 0;
+    for (var i in cart){
+        totalCost += cart[i].price * cart[i].count;
+    }
+    return totalCost.toFixed(2);
+}
+function addItemToCart (name, glazing, price, count) {
+    //if same item has been selected
+    for (var i in cart){
+        if (cart[i].name === name && cart[i].glazing === glazing){
+            cart[i].count += count;
+            saveCart();
+            return;
+        }
+    }
+    //if not
+    var item = new Item (name, glazing, price, count);
+    cart.push(item);
+    saveCart();
+}
+function removeItemFromCart(name, glazing){
+    for (var i in cart){
+        if (cart[i].name === name && cart[i].glazing === glazing){
+            cart[i].count -- ;
+            if (cart[i].count === 0) {
+                cart.splice(i,1);
+            }
+            break;
+        }
+    }
+    saveCart();
+}
