@@ -77,3 +77,10 @@ $(document).ready(function(){
     loadCart();
     displayCart();
 });
+
+var Item = function(name, glazing, price, count) {
+    this.name = name;
+    this.glazing = glazing;
+    this.price = price;
+    this.count = count;
+};
