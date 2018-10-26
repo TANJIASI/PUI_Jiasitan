@@ -72,6 +72,8 @@ $(document).ready(function(){
             $("#dialog").dialog({buttons:{OK:getResponse, Cancel:cancel}});
         }
     });
-
-
+    var shoppingCart = {};
+    shoppingCart.cart = [];
+    loadCart();
+    displayCart();
 });
