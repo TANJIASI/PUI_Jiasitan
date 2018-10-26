@@ -84,3 +84,44 @@ var Item = function(name, glazing, price, count) {
     this.price = price;
     this.count = count;
 };
+function displayCart(){
+    var cartArray = listCart();
+    var output = "";
+    for (var i in cartArray){
+        output += "<div class='cart-item'>"
+            +"<img src='./images/walnut.jpg' style='width:100px;'>"
+            +"<p>"+cartArray[i].name+"</p><br>"
+            +"<p>"+cartArray[i].glazing+"</p><br>"
+            +"<button class='subtract-item' data-name='"
+            +cartArray[i].name+"'>-</button>"
+            +" "+cartArray[i].count
+            +"<button class='add-item' data-name='"
+            +cartArray[i].name+"'>+</button>"
+            +" x "+cartArray[i].price
+            +" = "+cartArray[i].total
+            +"<button class='delete-item' data-name='"
+            +cartArray[i].name+"'> Delete </button>"
+            +"</div>";
+    }
+    $("#show-cart").html(output);
+    $("#total-cart").html(totalItemCost());
+}
+function listCart(){
+    var cartCopy = [];
+    for (var i in cart){
+        var item = cart[i];
+        var itemCopy = {};
+        for (var j in item){
+            itemCopy[j] = item [j];
+        }
+        itemCopy.total = (item.price * item.count).toFixed(2);
+        cartCopy.push(itemCopy);
+    }
+    return cartCopy;
+}
+function saveCart(){
+    localStorage.setItem("shoppingCart", JSON.stringify(cart));
+}
+function loadCart(){
+    cart = JSON.parse(localStorage.getItem("shoppingCart"));
+}
