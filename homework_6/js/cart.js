@@ -51,6 +51,27 @@ $(document).ready(function(){
         $(".count").css({"border":"2px solid #d6d6d6", "color":"black", "background-color":"white"});
         $(this).css({"border":"2px solid #d6d6d6", "color":"white", "background-color":"gray"});
     });
+    // get price
+    $("#addtocart").click(function (event) {
+        name = "Walnut Roll";
+        price = 4.99;
+        // store to local storage
+        event.preventDefault();
+        if(count==null){
+            alert("Please select number of items needed!");
+            $(".count").css({"border":"2px solid red", "color":"red", "background-color":"white"});
+        }else{
+            var getResponse = function(){
+                addItemToCart(name, glazing, price, count);
+                $( this ).dialog( "close" );
+            };
+            var cancel = function(){
+            };
+            var value="You selected " + count +" "+ name + "s. The items will be added to your cart.";
+            $("#dialog").text(value);
+            $("#dialog").dialog({buttons:{OK:getResponse, Cancel:cancel}});
+        }
+    });
 
 
 });
