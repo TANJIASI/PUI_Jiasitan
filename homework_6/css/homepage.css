@@ -1,0 +1,46 @@
+html {
+    background: url("../images/homepage.jpg") 0px -500px;
+    font-family: sans-serif;
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -ms-overflow-style: scrollbar;
+    -webkit-tap-highlight-color: transparent; }
+body {
+    background-color: transparent;
+    height: 100%;
+}
+.flex-item a{
+    color: #eeeeee;
+}
+.container{
+    display: flex;
+    margin: auto;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+}
+.heading{
+    color: white;
+}
+.description{
+    color: white;
+}
+.button{
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+.btn-outline-white{
+    color: white;
+    border: 2px solid white;
+}
+.new-nav-item a:hover{
+    color: #aaaaaa;
+}
+
+
+
