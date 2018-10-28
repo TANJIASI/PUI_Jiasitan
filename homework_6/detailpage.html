@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500" rel="stylesheet">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -14,73 +14,69 @@
 <body>
     <div class="flex">
         <div class="flex-item">
-            <a class="" id="homepage" href="homepage.html"><span class="flaticon-gavel"></span>Bun Bun Bake Shop</a>
+            <img src="images/Bun logo.svg" height="50px" />
         </div>
         <div class="flex-item nav">
             <nav class="">
                 <span class="new-nav-item"><a href="homepage.html" class="nav-link">Home</a></span>
                 <span class="new-nav-item"><a href="browsingpage.html" class="nav-link">Flavors</a></span>
-                <span class="new-nav-item"><a href="about.html" class="nav-link">About</a></span>
+                <span class="new-nav-item"><a href="about.html" class="nav-link">Wishlist</a></span>
                 <span class="new-nav-item"><a href="cart.html" class="nav-link">My Cart</a></span>
             </nav>
             <div id="dialog"></div>
         </div>
-</div>
-    <div class="section bg-light">
-        <div class="container">
-            <div class="pagehead col-md-7 text-center"  data-aos="fade-up">
+    </div>
+    <div>
+        <div>
+            <div class="pagehead">
                 <h2>Walnut Roll</h2>
+                <h3>$4.99/each</h3>
             </div>
             <div class="flex1">
                 <div class="flex1-item item1">
-                    <div class="">
-                        <span data-aos="fade-up"  data-aos-delay="700" class="btn btn-outline-grey px-4 py-3">Pick-up</span>
-                        <span data-aos="fade-up"  data-aos-delay="700" class="btn btn-outline-grey px-4 py-3">Delivery</span>
+                    <div>
+                        <span class="btn">Pick-up</span>
+                        <span class="btn">Delivery</span>
                     </div>
                 </div>
                 <div class="flex1-item item2">
-                <div class="detail-image block-10">
-                    <img src="images/walnut.jpg" alt="" class="img-fluid">
-                    <img src="images/glutenFree.jpg" alt="" class="img-fluid">
-                    <img src="images/walnut.jpg" alt="" class="img-fluid">
-                    <img src="images/glutenFree.jpg" alt="" class="img-fluid">
-                    <div class="person-info mb-3">
-                    </div>
+                <div class="detail-image">
+                    <img class="walnutrollimage" src="images/walnut.jpg" alt="walnut">
+                    <img class="walnutrollimage" src="images/walnut2.jpg" alt="walnut">
+                    <img class="walnutrollimage" src="images/walnut3.jpg" alt="walnut">
+                    <img class="walnutrollimage" src="images/walnut4.jpg" alt="walnut">
                 </div>
             </div>
                 <div class="flex1-item item3">
-                    <div class="block-10">
-                        <div class="person-info mb-3">
+                    <div>
+                        <div>
                             <p>Walnut rolls description placeholder: I’ve seen this called nut roll, Hungarian nut roll, Slovak nut roll, Polish nut roll, kolache, even Pittsburgh nut roll, which blew my mind when I saw it! I didn’t realize they were so synonymous with this region, but that makes me just plain giddy. Whatever name you go by, traditional nut roll is a soft sweet dough that is filled with a sweet walnut mixture. It basically tastes like Christmas and it wouldn’t be the holidays without devouring an embarrassing amount of nut roll.</p>
                             <br>
-                            <br>
                             <h4>Glazing</h4>
-                            <span data-aos="fade-up"  data-aos-delay="700" data-name="None" class="btn glazing btn-outline-grey px-4 py-3">None</span>
-                            <span data-aos="fade-up"  data-aos-delay="700" data-name="Sugar-milk" class="btn glazing btn-outline-grey px-4 py-3">Sugar-milk</span>
-                            <span data-aos="fade-up"  data-aos-delay="700" data-name="Vanilla-milk" class="btn glazing btn-outline-grey px-4 py-3">Vanilla-milk</span>
-                            <span data-aos="fade-up"  data-aos-delay="700" data-name="Double-Chocolate" class="btn glazing btn-outline-grey px-4 py-3">Double-Chocolate</span>
-                            <br>
+                            <span data-name="None" class="btn glazing">None</span>
+                            <span data-name="Sugar-milk" class="btn glazing">Sugar-milk</span>
+                            <span data-name="Vanilla-milk" class="btn glazing">Vanilla-milk</span>
+                            <span data-name="Double-Chocolate" class="btn glazing">Double-Chocolate</span>
                             <br>
                             <br>
                             <h4>Count</h4>
-                            <span data-aos="fade-up"  data-aos-delay="700" data-name="1" class="btn count btn-outline-grey px-4 py-3">1</span>
-                            <span data-aos="fade-up"  data-aos-delay="700" data-name="3" class="btn count btn-outline-grey px-4 py-3">3</span>
-                            <span data-aos="fade-up"  data-aos-delay="700" data-name="6" class="btn count btn-outline-grey px-4 py-3">6</span>
-                            <span data-aos="fade-up"  data-aos-delay="700" data-name="12" class="btn count btn-outline-grey px-4 py-3">12</span>
+                            <span data-pack="1" class="btn pack">1</span>
+                            <span data-pack="3" class="btn pack">3</span>
+                            <span data-pack="6" class="btn pack">6</span>
+                            <span data-pack="12" class="btn pack">12</span>
                             <br>
                             <br>
-                            <span data-aos="fade-up"  data-aos-delay="700" class="btn btn-outline-black px-4 py-3" id="addtocart">ADD TO CART</span>
-                            <br>
+                            <span class="btn" id="addtocart">ADD TO CART</span>
                             <br>
                             <br>
                             <h4>Review</h4>
                             <h5>4.6 out of 5.0</h5>
                             <br>
-                            <p>I always stop in at the Butter Maid Bakery, located in the Boardman plaza, whenever I’m in the Youngstown area. Good thing Butter Maid ships too, so you can satisfy your craving for delicious, homemade kolachi and baked goods any time. Thanks to the Naumoff family for carrying on our great family tradition of baking!</p>
+                            <p class="review">I always stop in at the Butter Maid Bakery, located in the Boardman plaza, whenever I’m in the Youngstown area. Good thing Butter Maid ships too, so you can satisfy your craving for delicious, homemade kolachi and baked goods any time. Thanks to the Naumoff family for carrying on our great family tradition of baking!</p>
                             <br>
                             <h5>4.8 out of 5.0</h5>
                             <br>
-                            <p>I always stop in at the Butter Maid Bakery, located in the Boardman plaza, whenever I’m in the Youngstown area. Good thing Butter Maid ships too, so you can satisfy your craving for delicious, homemade kolachi and baked goods any time. Thanks to the Naumoff family for carrying on our great family tradition of baking!</p>
+                            <p class="review">I always stop in at the Butter Maid Bakery, located in the Boardman plaza, whenever I’m in the Youngstown area. Good thing Butter Maid ships too, so you can satisfy your craving for delicious, homemade kolachi and baked goods any time. Thanks to the Naumoff family for carrying on our great family tradition of baking!</p>
                             <br>
                         </div>
                     </div>
