@@ -80,8 +80,13 @@ $(document).ready(function(){
     });
     // get price
     $("#addtocart").click(function (event) {
-        name = "Walnut Roll";
-        price = 4.99;
+        // name = "Walnut Roll";
+        // price = 4.99;
+        name = $(".pagehead h2").text();
+        price = $(".pagehead h3").text();
+        price = price.replace(/[^0-9.]/ig, "");
+        console.log("price:", price);
+        console.log(name);
         count = 1;
         // store to local storage
         event.preventDefault();
@@ -128,7 +133,7 @@ function displayCart(){
     var output = "";
     for (var i in cartArray){
         output += "<div class='cart-item'>"
-            +"<img src='./images/walnut.jpg' style='width:100px;'>"
+            +"<img src='./images/"+ cartArray[i].name +".jpg' style='width:100px;'>"
             +"<p class='name'>"+cartArray[i].name+"</p><br>"
             +"<p class='glazing'>"+cartArray[i].glazing+"</p><br>"
             +"<p>(</p><p class='pack'>"+cartArray[i].pack+"</p><p>-pack)</p><br>"
