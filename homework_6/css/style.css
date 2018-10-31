@@ -207,3 +207,10 @@ hr {
     padding-right: 15px;
 }
 
+#addtowishlist:hover{
+    opacity: 0.5;
+}
+
+#addtocartwithlogo:hover{
+    opacity: 0.5;
+}
