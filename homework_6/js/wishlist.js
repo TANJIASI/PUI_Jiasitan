@@ -22,15 +22,12 @@ $(document).ready(function(){
 
     $("#show-cart").on("click",".delete-item",function(event){
         var name = $(this).attr("data-name");
-
         var cart_item = $(this).parent();
         console.log(cart_item.children(".name").text());
         var item_name = cart_item.children(".name").text();
         var item_glazing = cart_item.children(".glazing").text();
         var item_pack = cart_item.children(".pack").text();
         item_pack = parseInt(item_pack);
-
-
         removeItemFromCartAll(item_name, item_glazing, item_pack);
         displayCart();
     });
@@ -67,7 +64,7 @@ $(document).ready(function(){
     $(".glazing").click(function(){
         glazing = $(this).attr("data-name");
         if(glazing == "None"){
-            glazing = "no glazing";
+            glazing = "None glazing";
         }
         console.log("glazing", glazing);
         $(".glazing").css({"border":"2px solid #d6d6d6", "color":"black", "background-color":"white"});
@@ -82,15 +79,18 @@ $(document).ready(function(){
         $(this).css({"border":"2px solid #d6d6d6", "color":"white", "background-color":"gray"});
     });
     // get price
-    $("#addtocart").click(function (event) {
-        name = "Walnut Roll";
-        price = 4.99;
+    $("#addtowishlist").click(function (event) {
+        name = $(".pagehead h2").text();
+        price = $(".pagehead h3").text();
+        price = price.replace(/[^0-9.]/ig, "");
+        console.log("price:", price);
+        console.log(name);
         count = 1;
         // store to local storage
         event.preventDefault();
-        if(count==null){
+        if(pack==null){
             alert("Please select number of items needed!");
-            $(".count").css({"border":"2px solid red", "color":"red", "background-color":"white"});
+            $(".pack").css({"border":"2px solid red", "color":"red", "background-color":"white"});
         }else{
             var getResponse = function(){
                 console.log("Get Response Done");
@@ -101,14 +101,18 @@ $(document).ready(function(){
                 console.log(count);
                 addItemToCart(name, glazing, price, pack, count);
                 $( this ).dialog( "close" );
-
             };
             var cancel = function(){
+                $( this ).dialog( "close" );
             };
-            var value="You selected " + pack +" "+glazing + name + "s. The items will be added to your cart.";
+            var value="You are adding " + pack +" "+glazing +" "+ name + "s to your cart!";
             $("#dialog").text(value);
             $("#dialog").dialog({buttons:{OK:getResponse, Cancel:cancel}});
         }
+    });
+    $(".method").click(function(){
+        $(".method").css({"border":"2px solid #d6d6d6", "color":"black", "background-color":"white"});
+        $(this).css({"border":"2px solid #d6d6d6", "color":"white", "background-color":"gray"});
     });
 
     loadCart();
@@ -122,13 +126,12 @@ var Item = function(name, glazing, price, pack, count) {
     this.pack = pack;
     this.count = 1;
 };
-
 function displayCart(){
     var cartArray = listCart();
     var output = "";
     for (var i in cartArray){
         output += "<div class='cart-item'>"
-            +"<img src='./images/walnut.jpg' style='width:100px;'>"
+            +"<img src='./images/"+ cartArray[i].name +".jpg' style='width:100px;'>"
             +"<p class='name'>"+cartArray[i].name+"</p><br>"
             +"<p class='glazing'>"+cartArray[i].glazing+"</p><br>"
             +"<p>(</p><p class='pack'>"+cartArray[i].pack+"</p><p>-pack)</p><br>"
@@ -192,7 +195,6 @@ function totalItemCost(){
     }
     return totalCost.toFixed(2);
 }
-
 function addItemToCart (name, glazing, price, pack, count) {
     //if same item has been selected
     if (cart == undefined){
