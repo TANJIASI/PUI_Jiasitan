@@ -1,0 +1,132 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Colors are Beautiful_Blending Tool</title>
+    <link rel="shortcut icon" type="image/png" href="../Assets/images/favicon2.png">
+    <link rel="stylesheet" href="../Assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../Assets/css/aos.min.css">
+    <link rel="stylesheet" href="../Assets/css/navbar.css">
+    <link rel="stylesheet" href="../Assets/css/hamburgers/hamburgers.min.css">
+    <link rel="stylesheet" href="../Assets/fonts/icomoon/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../Assets/css/blending.css">
+</head>
+
+<body>
+<header class="nav templateux-navbar" data-aos="fade-down">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3 col-3">
+                <div class="site-logo">
+                    <a href="../index.html" class="animsition-link"><img src="../Assets/images/sitelogo.svg" /></a>
+                    <ul class="list-unstyled">
+                        <li><a href="../index.html" class="animsition-link">HOME</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-9 col-9 text-right">
+                <button class="hamburger hamburger--spin toggle-menu ml-auto js-toggle-menu" type="button">
+                  <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                  </span>
+                </button>
+                <nav class="templateux-menu js-templateux-menu" role="navigation">
+                    <ul class="list-unstyled">
+                        <li><a href="about.html" class="animsition-link">About this Site</a></li>
+                        <li><a href="colortheories.html" class="animsition-link">Color Wheel</a></li>
+                        <li><a href="blending.html" class="animsition-link">Blending Tool</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<div id="two-canvas">
+    <div>
+        <canvas id="c-left"></canvas>
+    </div>
+    <div>
+        <canvas id="c-right"></canvas>
+    </div>
+</div>
+<!--I duplicated many of the div (circle) for better visual effects to avoid transparency -->
+<div class="row">
+    <div class="mixed-color-left" id="mixed-color-left"></div>
+</div>
+<div class="row">
+    <div class="mixed-color-right" id="mixed-color-right"></div>
+</div>
+<div class="row">
+    <div class="mixed-color-left" id="mixed-color-left-2"></div>
+</div>
+<div class="row">
+    <div class="mixed-color-right" id="mixed-color-right-2"></div>
+</div>
+<div class="row">
+    <div class="mixed-color-left" id="mixed-color-left-3"></div>
+</div>
+<div class="row">
+    <div class="mixed-color-right" id="mixed-color-right-3"></div>
+</div>
+<div class="row">
+    <div class="mixed-color-left" id="mixed-color-left-4"></div>
+</div>
+<div class="row">
+    <div class="mixed-color-right" id="mixed-color-right-4"></div>
+</div>
+<div class="row">
+    <div id="mixed-color-white"></div>
+</div>
+<div id="panels">
+    <div id="panel-left col-3 col-sm-3">
+        <div id="btnsLeft" class="btns-left">
+            <button class="color-left btn btn-outline-light mainbtn" id="btn-l1">Red</button>
+            <button class="color-left btn btn-outline-light mainbtn" id="btn-l2">Blue</button>
+            <button class="color-left btn btn-outline-light mainbtn" id="btn-l3">Yellow</button>
+            <button class="color-left btn btn-outline-light mainbtn" id="btn-l4">Green</button>
+            <button class="color-left btn btn-outline-light mainbtn" id="btn-l5">Orange</button>
+            <button class="color-left btn btn-outline-light mainbtn" id="btn-l6">Violet</button>
+            <button class="color-left btn btn-outline-light mainbtn" id="btn-l7">Red-Orange</button>
+            <button class="color-left btn btn-outline-light mainbtn" id="btn-l8">Yellow-Orange</button>
+            <button class="color-left btn btn-outline-light mainbtn" id="btn-l9">Yellow-Green</button>
+            <button class="color-left btn btn-outline-light mainbtn" id="btn-l10">Blue-Green</button>
+            <button class="color-left btn btn-outline-light mainbtn" id="btn-l11">Blue-Violet</button>
+            <button class="color-left btn btn-outline-light mainbtn" id="btn-l12">Red-Violet</button>
+        </div>
+    </div>
+    <div id="main-content" class="col-sm-6 col-6 col-md-8 col-lg-8">
+        <h2 id="mix-instruction" data-aos="fade-down" data-aos-easi55555ng="linear" data-aos-duration="500">Pick one from the left and one from the right, then click Mix!</h2>
+        <p class="color-description" data-aos-duration="1000" data-aos-delay="500">Just by mixing primary, secondary and tertiary colors, you can get all the colors of the rainbow!</p>
+        <button id="mix-color" class="btn btn-outline-dark btn-lg">Mix!</button>
+    </div>
+    <div id="panel-right col-3 col-sm-3">
+        <div class="btns-right">
+            <button class="color-right btn btn-outline-light mainbtn" id="btn-r1">Red</button>
+            <button class="color-right btn btn-outline-light mainbtn" id="btn-r2">Blue</button>
+            <button class="color-right btn btn-outline-light mainbtn" id="btn-r3">Yellow</button>
+            <button class="color-right btn btn-outline-light mainbtn" id="btn-r4">Green</button>
+            <button class="color-right btn btn-outline-light mainbtn" id="btn-r5">Orange</button>
+            <button class="color-right btn btn-outline-light mainbtn" id="btn-r6">Violet</button>
+            <button class="color-right btn btn-outline-light mainbtn" id="btn-r7">Red-Orange</button>
+            <button class="color-right btn btn-outline-light mainbtn" id="btn-r8">Yellow-Orange</button>
+            <button class="color-right btn btn-outline-light mainbtn" id="btn-r9">Yellow-Green</button>
+            <button class="color-right btn btn-outline-light mainbtn" id="btn-r10">Blue-Green</button>
+            <button class="color-right btn btn-outline-light mainbtn" id="btn-r11">Blue-Violet</button>
+            <button class="color-right btn btn-outline-light mainbtn" id="btn-r12">Red-Violet</button>
+        </div>
+    </div>
+</div>
+
+
+<script src="../Assets/js/jquery.min.js"></script>
+<script src="../Assets/js/anime.min.js"></script>
+<script src="../Assets/js/aos.min.js"></script>
+<script src="../Assets/js/bootstrap.min.js"></script>
+<script src="../Assets/js/animsition.min.js"></script>
+
+<script src="../Assets/js/blending.js"></script>
+<script src="../Assets/js/main.js"></script>
+</body>
+</html>
